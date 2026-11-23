@@ -1,0 +1,352 @@
+/* ==========================================
+   TECHJOVEM — TECNOLOGIA QUE ABRE CAMINHOS
+   Aula 05 — Estilização com CSS3
+   ========================================== */
+
+
+/* 1. CONFIGURAÇÕES GERAIS */
+
+/* Inclui bordas e padding no cálculo dos tamanhos */
+* {
+    box-sizing: border-box;
+}
+
+/* Define as cores e fontes gerais */
+body {
+    margin: 0;
+    background-color: #F5F7FA;
+    color: #243247;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Padroniza os títulos */
+h1, h2, h3 {
+    line-height: 1.3;
+}
+
+/* Define a cor dos títulos secundários */
+h2 {
+    color: #0866D8;
+}
+
+
+/* 2. CABEÇALHO */
+
+/* Apresentação principal */
+header {
+    background-color: #10233F;
+    color: white;
+    padding: 35px 8%;
+}
+
+/* Nome TechJovem */
+header h1 {
+    font-size: 38px;
+    margin: 0 0 10px;
+    color: white;
+}
+
+/* Textos do cabeçalho */
+header p {
+    margin: 5px 0;
+}
+
+
+/* 3. MENU DE NAVEGAÇÃO */
+
+/* Fundo e posicionamento do menu */
+nav {
+    background-color: #172F52;
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Organiza os links horizontalmente */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Personaliza os links */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Efeito ao passar o mouse */
+nav a:hover {
+    color: #69B7FF;
+}
+
+/* Destaque ao navegar pelo teclado */
+nav a:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 5px;
+}
+
+
+/* 4. CONTEÚDO PRINCIPAL */
+
+/* Controla a largura geral */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* Estiliza as seções */
+main > section {
+    background-color: white;
+    margin-bottom: 30px;
+    padding: 35px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    scroll-margin-top: 100px;
+}
+
+
+/* 5. BANNER PRINCIPAL */
+
+/* Coloca texto e imagem lado a lado */
+#inicio {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 35px;
+    background-color: #EAF3FF;
+}
+
+/* Título de destaque */
+#inicio h2 {
+    font-size: 36px;
+    color: #10233F;
+}
+
+/* Texto do banner */
+#inicio p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+/* Fotografia principal */
+.imagem-destaque {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Botão principal */
+.botao-destaque {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: #0866D8;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: background-color 0.2s;
+}
+
+/* Efeito do botão */
+.botao-destaque:hover {
+    background-color: #064DA3;
+}
+
+
+/* 6. SEÇÕES DE CONTEÚDO */
+
+/* Organiza os artigos em colunas */
+#tecnologia,
+#conhecimento,
+#profissional {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* Títulos, textos e listas ocupam toda a largura */
+#tecnologia > h2,
+#tecnologia > p,
+#conhecimento > h2,
+#conhecimento > p,
+#conhecimento > h3,
+#conhecimento > ul,
+#profissional > h2,
+#profissional > p,
+#profissional > h3,
+#profissional > ol {
+    grid-column: 1 / -1;
+}
+
+/* Cartões de conteúdo */
+article {
+    background-color: #F5F9FF;
+    border: 1px solid #E0EAF7;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+/* Títulos dos cartões */
+article h3 {
+    color: #10233F;
+    margin-top: 12px;
+}
+
+/* Imagens dos artigos */
+.imagem-artigo {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+/* 7. FORMULÁRIO DE INSCRIÇÃO */
+
+/* Destaque da seção */
+#inscricao {
+    background-color: #EFF6FF;
+}
+
+/* Largura do formulário */
+#inscricao form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Espaçamento entre os campos */
+#inscricao form > div {
+    margin-bottom: 18px;
+}
+
+/* Rótulos dos campos */
+#inscricao label {
+    cursor: pointer;
+}
+
+/* Campos de texto, e-mail e observações */
+#inscricao input[type="text"],
+#inscricao input[type="email"],
+#inscricao select,
+#inscricao textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border: 1px solid #B8C7D9;
+    border-radius: 8px;
+    font: inherit;
+}
+
+/* Destaque quando o campo recebe foco */
+#inscricao input:focus,
+#inscricao select:focus,
+#inscricao textarea:focus {
+    outline: 2px solid #0866D8;
+    outline-offset: 2px;
+}
+
+/* Grupos de escolhas */
+fieldset {
+    border: 1px solid #B8C7D9;
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 20px;
+}
+
+/* Títulos dos grupos */
+legend {
+    color: #10233F;
+    font-weight: bold;
+    padding: 0 8px;
+}
+
+/* Botão do formulário */
+button[type="submit"] {
+    background-color: #0866D8;
+    color: white;
+    padding: 14px 26px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Efeito do botão */
+button[type="submit"]:hover {
+    background-color: #064DA3;
+}
+
+
+/* 8. RODAPÉ */
+
+footer {
+    background-color: #10233F;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+
+/* 9. RESPONSIVIDADE */
+
+/* Ajustes para tablets e celulares */
+@media (max-width: 768px) {
+
+    header {
+        padding: 25px 20px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    nav ul {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    main > section {
+        padding: 22px;
+    }
+
+    /* Banner passa a ter uma coluna */
+    #inicio {
+        grid-template-columns: 1fr;
+    }
+
+    #inicio h2 {
+        font-size: 28px;
+    }
+
+    .imagem-destaque {
+        height: auto;
+    }
+
+    /* Cartões ficam empilhados */
+    #tecnologia,
+    #conhecimento,
+    #profissional {
+        grid-template-columns: 1fr;
+    }
+}
